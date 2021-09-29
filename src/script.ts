@@ -13,9 +13,8 @@ class Player {
     console.log(`${this.name} from ${this.country} is playing`);
   }
 }
-
-const sakib = new Player("Sakib", 34, "Bangladesh");
 const mashrafi = new Player("Mashrafi", 37, "Bangladesh");
+const sakib = new Player("Sakib", 34, "Bangladesh");
 
 sakib.play();
 mashrafi.play();
