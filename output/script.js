@@ -1,6 +1,7 @@
 import { Player } from "./classes/Player.js";
 const sakib = new Player("Sakib", 34, "Bangladesh");
-const mashrafi = new Player("Mashrafi", 37, "Bangladesh");
+let mashrafi;
+mashrafi = new Player("Mashrafi", 37, "Bangladesh");
 console.log(sakib.name);
 console.log(sakib.country);
 const players = [];

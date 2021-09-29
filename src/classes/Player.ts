@@ -1,4 +1,6 @@
-export class Player {
+import { IsPlayer } from "../interfaces/IsPlayer.js";
+
+export class Player implements IsPlayer {
   constructor(
     public name: string,
     private age: number,
@@ -7,5 +9,9 @@ export class Player {
 
   play() {
     console.log(`${this.name} from ${this.country} is playing`);
+  }
+
+  getProperty() {
+    return this.age;
   }
 }
