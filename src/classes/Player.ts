@@ -1,11 +1,16 @@
 import { IsPlayer } from "../interfaces/IsPlayer.js";
 
 export class Player implements IsPlayer {
+  static fiscalYear = 2020;
   constructor(
     public name: string,
     protected age: number, // added protected modifier so that it can be accessed in its child classes;
     readonly country: string
   ) {}
+
+  static createPlayerName(name: string) {
+    return { name: name };
+  }
 
   play() {
     console.log(`${this.name} from ${this.country} is playing`);
