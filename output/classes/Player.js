@@ -8,9 +8,6 @@ export class Player {
     static createPlayerName(name) {
         return { name: name };
     }
-    play() {
-        console.log(`${this.name} from ${this.country} is playing`);
-    }
     getProperty() {
         return this.age;
     }
@@ -31,5 +28,8 @@ export class FootballPlayer extends Player {
     constructor(name, age, country, goal) {
         super(name, age, country);
         this.goal = goal;
+    }
+    play() {
+        console.log(`${this.name} from ${this.country} has scored ${this.goal}`);
     }
 }

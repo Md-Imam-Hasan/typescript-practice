@@ -1,6 +1,6 @@
 import { IsPlayer } from "../interfaces/IsPlayer.js";
 
-export class Player implements IsPlayer {
+export abstract class Player implements IsPlayer {
   static fiscalYear = 2020;
   constructor(
     public name: string,
@@ -12,9 +12,8 @@ export class Player implements IsPlayer {
     return { name: name };
   }
 
-  play() {
-    console.log(`${this.name} from ${this.country} is playing`);
-  }
+  // abstract keyword force to the child class to implement the method by there own
+  abstract play(this: Player): void;
 
   getProperty() {
     return this.age;
@@ -47,5 +46,9 @@ export class FootballPlayer extends Player {
   constructor(name: string, age: number, country: string, goal: number) {
     super(name, age, country);
     this.goal = goal;
+  }
+
+  play() {
+    console.log(`${this.name} from ${this.country} has scored ${this.goal}`);
   }
 }
