@@ -3,7 +3,7 @@ import { IsPlayer } from "../interfaces/IsPlayer.js";
 export class Player implements IsPlayer {
   constructor(
     public name: string,
-    private age: number,
+    protected age: number, // added protected modifier so that it can be accessed in its child classes;
     readonly country: string
   ) {}
 
@@ -29,6 +29,11 @@ export class CricketPlayer extends Player {
     super(name, age, country);
     this.run = run;
     this.wicket = wicket;
+  }
+
+  // modified the play() method
+  play() {
+    console.log(`${this.name} from ${this.country} is ${this.age} years old`);
   }
 }
 
